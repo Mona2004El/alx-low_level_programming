@@ -1,10 +1,10 @@
 #include <stdio.h>
 /**
- *main - Entry function
+ *main - Based  functson
  *
  *Return : always 0
  */
-int main(void)
+void main(void)
 {
 printf("Size of a char : %lu byte(s)", sizeof(char));
 printf("Size of a int : %lu byte(s)",  sizeof(int));
