@@ -1,11 +1,9 @@
 #include <stdio.h>
-
 /**
  *main - Entry function
  *
  *Return : always 0
  */
-
 int main(void)
 {
 printf("Size of a char : %lu byte(s)", sizeof(char));
