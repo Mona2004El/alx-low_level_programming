@@ -2,14 +2,15 @@
 /**
  *main - Based  functson
  *
- *Return : always 0
+ *description: Size is not grandeur, and territory does not make a nation
+ *Return: always 0
  */
 void main(void)
 {
-printf("Size of a char : %lu byte(s)", sizeof(char));
-printf("Size of a int : %lu byte(s)",  sizeof(int));
-printf("Size of a long int : %lu byte(s)", sizeof(long int));
-printf("Size of a long long int : %lu byte(s)", sizeof(long long int));
-printf("Size of a float : %lu byte(s)", sizeof(float));
-return (0);
+printf("Size of a char : %u byte(s)", sizeof(char));
+printf("Size of a int : %u byte(s)",  sizeof(int));
+printf("Size of a long int : %u byte(s)", sizeof(long int));
+printf("Size of a long long int : %u byte(s)", sizeof(long long int));
+printf("Size of a float : %u byte(s)", sizeof(float));
+return;
 }
