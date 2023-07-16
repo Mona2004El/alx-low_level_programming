@@ -1,10 +1,15 @@
 #include <stdio.h>
+
 /**
- * main - this is the main function
- * return: always 0
- */
+ * main - building a multilingual puzzle
+ *
+ *Description: Programming is like building a multilingual puzzle
+ * return : always 0
+*/
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle\n");
+
+	puts("\"Programming is like building a multilingual puzzle");
+
 	return (0);
-}	
+}
