@@ -5,7 +5,7 @@
  *
  *Description: print _putchar using prototype
  *
- * return: always 0
+ *Return: return: always 0
  */
 
 int main(void)
