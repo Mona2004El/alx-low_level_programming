@@ -7,9 +7,11 @@
  *
  *return: return sum of a, b
  */
-int add(int a, int b);
+int add(int a, int b)
 {
-	int sum = a + b;
+	int sum;
+
+	       sum = a + b;
 
 	return (sum);
 }
