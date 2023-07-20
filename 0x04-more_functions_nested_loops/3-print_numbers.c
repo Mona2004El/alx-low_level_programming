@@ -6,10 +6,12 @@
  */
 void print_numbers(void)
 {
-	int a;
+	int a = 0;
 
-	for (a = 0, a < 10, a++)
-		_putchar(a + '0');
-	-putchar('\n')
-	return (0);
+	do {
+		putchar(a + 48);
+		a++;
+	} while (a >= 0 && a < 10);
+
+		putchar('\n');
 }
