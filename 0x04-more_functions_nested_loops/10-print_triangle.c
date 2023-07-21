@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * print_triangle - function that draws a triangle
@@ -11,7 +11,7 @@ void print_triangle(int size)
 	int columns, rows;
 
 	if (size <= 0)
-		_putchar('\n');
+		putchar('\n');
 	else
 	{
 		for (rows = 1; rows <= size; rows++)
@@ -19,11 +19,11 @@ void print_triangle(int size)
 			for (columns = 1; columns <= size; columns++)
 			{
 				if ((columns + rows) <= size)
-					_putchar(' ');
+					putchar(' ');
 				else
-					_putchar('#');
+					putchar('#');
 			}
-			_putchar('\n');
+			putchar('\n');
 		}
 	}
 }
