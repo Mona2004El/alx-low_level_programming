@@ -4,7 +4,6 @@
  * print_diagonal - function that draws a diagonal line in the terminal
  *@n: the number of /character
  *
- *
  */
 void print_diagonal(int n)
 {
@@ -13,13 +12,13 @@ void print_diagonal(int n)
 	if (n <= 0)
 		putchar('\n');
 	else
-	{
-		for (pos = 1; pos <= n; pos++)
 		{
+			for (pos = 1; pos <= n; pos++)
+			{
 			for (spac = 1; spac <= pos; spac++)
-				putchar(' ');
+			putchar(' ');
 			putchar(92);
 			putchar('\n');
+			}
 		}
-	}
 }
