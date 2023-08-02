@@ -1,9 +1,8 @@
 #include "main.h"
 /**
  * divisors - number is prime?
- * @n: integer
- * @m: integer
  * @i: integer
+ * @n: integer
  * Return: boolean
  */
 int tmp_prime(int n, int i);
