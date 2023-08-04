@@ -1,12 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-/**
- *_atoi - converts a string to an integer
- *@s: string
- *
- * Return: always 0
- */
-int _atoi(char *s)
 /**
  *main - multiplies two number
  *@argv: char
