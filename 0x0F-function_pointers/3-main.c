@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 
 	if (argc != 4)
 	{
-	
+
 		printf("error\n"), exit(98);
 	}
 	if (argv[2][1])
