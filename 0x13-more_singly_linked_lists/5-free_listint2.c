@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
- *free_list - frees list of node
- *@head: pointer to head
+ *free_listint2 - frees list of node
+ *@head: pointer to first node
  *
  * Return: void
  */
-void free_list(list_t *head)
+void free_listint2(listint_t **head)
 {
-	list_t *node;
+	listint_t *node, *temp;
 
 	if (!head)
 		node = *head;

@@ -1,5 +1,6 @@
 #include "lists.h"
 
+
 /**
  *free_listint - frees list of node
  *@head: pointer to first node
@@ -12,7 +13,7 @@ void free_listint(listint_t *head)
 
 	while (head)
 	{
-		head = node;
+		node = head;
 		head = head->next;
 		free(node);
 	}
