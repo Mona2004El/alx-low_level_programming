@@ -20,36 +20,38 @@ int main(int argc, char *argv[])
 	char buf[READ_BUF_SIZE];
 
 	if (argc != 3)
-	{
 		dprintf(STDERR_FILENO, USAGE);
 		exit(97);
-	}
+
 	from_fd = open(argv[1], O_RDONLY);
 	if (from_fd == -1)
-	{
 		dprintf(STDERR_FILENO, NO_READ, argv[1]);
 		exit(98);
-	}
+
 	to_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMISSIONS);
 	if (to_fd == -1)
-	{
 		dprintf(STDERR_FILENO, NO_write, argv[2]);
 		exit(99);
+
 	while ((b = read(from_fd, buf, READ_BUF_SIZE)) > 0)
 		if (write(to_fd, buf, b) != b)
 			dprintf(STDERR_FILENO, NO_WRITE, argv[2]);
 			close(fd_r);
 			exit(99);
-	if (b == -1)
+
+		if (b == -1)
 		dprintf(STDERR_FILENO, NO_CLOSE, argv[1]);
 		exit(98);
+
 	from_fd = close(from_fd);
 	to_fd = close(to_fd);
 		if (from_fd)
 			dprintf(STDERR_FILENO, NO_CLOSE, from_fd);
 		exit(100);
+
 		if (to_fd)
 			dprintf(STDERR_FILENO, NO_CLOSE, from_fd);
 		exit(100);
+
 	return (0);
 }
