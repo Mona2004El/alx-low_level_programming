@@ -15,8 +15,6 @@ int _strlen(char *s)
 		i++;
 	return (i);
 }
-#include "main.h"
-
 /**
  * append_text_to_file - appends text at the end of a file
  * @filename: file to append the text to
