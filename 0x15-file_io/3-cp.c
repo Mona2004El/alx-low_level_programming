@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	}
 		if (b == -1)
 		{
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, argv[1]), exit(98);
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 		}
 	from_fd = close(from_fd);
 	to_fd = close(to_fd);
