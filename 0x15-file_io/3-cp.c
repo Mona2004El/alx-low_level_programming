@@ -1,9 +1,9 @@
 #include "main.h"
 
 #define USAGE "Usage: cp file_from file_to\n"
-#define NO_READ "Error: Can't read from file %s\n"
-#define NO_WRITE "Error: Can't write to %s\n"
-#define NO_CLOSE "Error: Can't close fd %s\n"
+#define ERR_NOREAD "Error: Can't read from file %s\n"
+#define ERR_NOWRITE "Error: Can't write to %s\n"
+#define ERR_NOCLOSE "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH)
 
 /**
@@ -26,33 +26,29 @@ int main(int argc, char *argv[])
 	from_fd = open(argv[1], O_RDONLY);
 	if (from_fd == -1)
 	{
-		dprintf(STDERR_FILENO, NO_READ, argv[1], exit(98));
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1], exit(98));
 	}
 	to_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, PERMISSIONS);
 	if (to_fd == -1)
 	{
-		dprintf(STDERR_FILENO, NO_write, argv[2], exit(99));
+		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2], exit(99));
 	}
 	while ((b = read(from_fd, buf, READ_BUF_SIZE)) > 0)
 		if (write(to_fd, buf, b) != b)
 		{
-			dprintf(STDERR_FILENO, NO_WRITE, argv[2]);
-			exit(99);
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2], exit(99));
 		}
 		if (b == -1)
 		{
-		dprintf(STDERR_FILENO, NO_CLOSE, argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, argv[1], exit(98));
 		}
 	from_fd = close(from_fd);
 	to_fd = close(to_fd);
 		if (from_fd)
-			dprintf(STDERR_FILENO, NO_CLOSE, from_fd);
-		exit(100);
+			dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd, exit(100));
 
 		if (to_fd)
-			dprintf(STDERR_FILENO, NO_CLOSE, from_fd);
-		exit(100);
+			dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd, exit(100));
 
 	return (0);
 }
